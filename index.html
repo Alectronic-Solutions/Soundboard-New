@@ -1323,11 +1323,8 @@
   <script>
     function play(id) {
       const orig = document.getElementById(id);
-      const clone = orig.cloneNode();
-      clone.play();
-      clone.dataset.isClone = true;
-      document.body.appendChild(clone);
-      clone.addEventListener('ended', () => clone.remove());
+      orig.currentTime = 0; // Reset playback to the start
+      orig.play(); // Play the original audio
     }
 
     function stopAll() {
