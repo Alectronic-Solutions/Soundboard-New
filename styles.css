@@ -1,0 +1,559 @@
+body {
+  font-family: Arial, sans-serif; /* Modern font */
+  background-color: #000; /* Set background to black */
+  color: #e0e0e0; /* Light gray text for readability */
+  margin: 0;
+  padding: 0;
+}
+
+#controls {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background-color: #343a40;
+  color: white;
+  padding: 1rem; /* Increased padding for better spacing */
+  border-bottom: 2px solid #007BFF;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#controls input[type="text"],
+#controls button,
+#controls select {
+  padding: 0.75rem; /* Increased padding for better usability */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for inputs */
+}
+
+#controls input[type="text"] {
+  flex: 1;
+  max-width: 300px;
+}
+
+#controls button {
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#controls button:hover {
+  background-color: #a71d2a;
+  transform: scale(1.05); /* Slight hover effect */
+}
+
+#controls select {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Ensure 6 buttons per row */
+  gap: 0.5rem; /* Reduce spacing between buttons */
+  padding: 0.5rem; /* Reduce padding around the grid */
+  max-width: 100%; /* Ensure the grid spans the full width */
+  margin: 0.5rem auto; /* Reduce margin around the grid */
+}
+
+#board > div {
+  display: flex; /* Ensure consistent alignment */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  overflow: hidden; /* Prevent content overflow */
+  min-height: 80px; /* Ensure consistent height for all button containers */
+}
+
+button {
+  width: 100%; /* Make buttons fill their grid cell */
+  height: 80px; /* Fixed height for uniformity */
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  white-space: normal; /* Allow text wrapping */
+  overflow: hidden; /* Prevent content overflow */
+  padding: 0.25rem; /* Reduce padding inside buttons */
+  border: 2px solid #fff; /* White outline */
+  border-radius: 0.5rem; /* Add rounded corners for a modern look */
+  background-color: #555; /* Neutral dark gray for buttons */
+  color: #000; /* Black text */
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* 3D text effect */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 3D button effect */
+}
+
+button:hover {
+  background-color: #777; /* Slightly lighter gray on hover */
+  transform: scale(1.05); /* Slight hover effect */
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7); /* Enhanced 3D effect on hover */
+}
+
+button:active {
+  background-color: #444; /* Slightly darker gray on click */
+  transform: scale(0.95); /* Slight shrink effect on click */
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5); /* Inset shadow for pressed effect */
+}
+
+#board > div:nth-last-child(2),
+#board > div:last-child {
+  grid-column: auto; /* Remove spanning to ensure consistent layout */
+  justify-content: center; /* Center align like the rest of the buttons */
+}
+
+#board > div:nth-child(12n + 1) button,
+#board > div:nth-child(12n + 2) button,
+#board > div:nth-child(12n + 3) button,
+#board > div:nth-child(12n + 4) button,
+#board > div:nth-child(12n + 5) button,
+#board > div:nth-child(12n + 6) button,
+#board > div:nth-child(12n + 7) button,
+#board > div:nth-child(12n + 8) button,
+#board > div:nth-child(12n + 9) button,
+#board > div:nth-child(12n + 10) button,
+#board > div:nth-child(12n + 11) button,
+#board > div:nth-child(12n) button {
+  background-color: #FF5733; /* Red-Orange for the first set of 12 */
+}
+
+#board > div:nth-child(12n + 13) button,
+#board > div:nth-child(12n + 14) button,
+#board > div:nth-child(12n + 15) button,
+#board > div:nth-child(12n + 16) button,
+#board > div:nth-child(12n + 17) button,
+#board > div:nth-child(12n + 18) button,
+#board > div:nth-child(12n + 19) button,
+#board > div:nth-child(12n + 20) button,
+#board > div:nth-child(12n + 21) button,
+#board > div:nth-child(12n + 22) button,
+#board > div:nth-child(12n + 23) button,
+#board > div:nth-child(12n + 24) button {
+  background-color: #33FF57; /* Green for the second set of 12 */
+}
+
+#board > div:nth-child(12n + 25) button,
+#board > div:nth-child(12n + 26) button,
+#board > div:nth-child(12n + 27) button,
+#board > div:nth-child(12n + 28) button,
+#board > div:nth-child(12n + 29) button,
+#board > div:nth-child(12n + 30) button,
+#board > div:nth-child(12n + 31) button,
+#board > div:nth-child(12n + 32) button,
+#board > div:nth-child(12n + 33) button,
+#board > div:nth-child(12n + 34) button,
+#board > div:nth-child(12n + 35) button,
+#board > div:nth-child(12n + 36) button {
+  background-color: #3357FF; /* Blue for the third set of 12 */
+}
+
+#board > div:nth-child(12n + 37) button,
+#board > div:nth-child(12n + 38) button,
+#board > div:nth-child(12n + 39) button,
+#board > div:nth-child(12n + 40) button,
+#board > div:nth-child(12n + 41) button,
+#board > div:nth-child(12n + 42) button,
+#board > div:nth-child(12n + 43) button,
+#board > div:nth-child(12n + 44) button,
+#board > div:nth-child(12n + 45) button,
+#board > div:nth-child(12n + 46) button,
+#board > div:nth-child(12n + 47) button,
+#board > div:nth-child(12n + 48) button {
+  background-color: #FFC300; /* Yellow for the fourth set of 12 */
+}
+
+#board > div:nth-child(12n + 49) button,
+#board > div:nth-child(12n + 50) button,
+#board > div:nth-child(12n + 51) button,
+#board > div:nth-child(12n + 52) button,
+#board > div:nth-child(12n + 53) button,
+#board > div:nth-child(12n + 54) button,
+#board > div:nth-child(12n + 55) button,
+#board > div:nth-child(12n + 56) button,
+#board > div:nth-child(12n + 57) button,
+#board > div:nth-child(12n + 58) button,
+#board > div:nth-child(12n + 59) button,
+#board > div:nth-child(12n + 60) button {
+  background-color: #900C3F; /* Maroon for the fifth set of 12 */
+}
+
+#board > div:nth-child(12n + 61) button,
+#board > div:nth-child(12n + 62) button,
+#board > div:nth-child(12n + 63) button,
+#board > div:nth-child(12n + 64) button,
+#board > div:nth-child(12n + 65) button,
+#board > div:nth-child(12n + 66) button,
+#board > div:nth-child(12n + 67) button,
+#board > div:nth-child(12n + 68) button,
+#board > div:nth-child(12n + 69) button,
+#board > div:nth-child(12n + 70) button,
+#board > div:nth-child(12n + 71) button,
+#board > div:nth-child(12n + 72) button {
+  background-color: #581845; /* Purple for the sixth set of 12 */
+}
+
+#board > div:nth-child(12n + 73) button,
+#board > div:nth-child(12n + 74) button,
+#board > div:nth-child(12n + 75) button,
+#board > div:nth-child(12n + 76) button,
+#board > div:nth-child(12n + 77) button,
+#board > div:nth-child(12n + 78) button,
+#board > div:nth-child(12n + 79) button,
+#board > div:nth-child(12n + 80) button,
+#board > div:nth-child(12n + 81) button,
+#board > div:nth-child(12n + 82) button,
+#board > div:nth-child(12n + 83) button,
+#board > div:nth-child(12n + 84) button {
+  background-color: #FF33FF; /* Magenta for the seventh set of 12 */
+}
+
+#board > div:nth-child(12n + 85) button,
+#board > div:nth-child(12n + 86) button,
+#board > div:nth-child(12n + 87) button,
+#board > div:nth-child(12n + 88) button,
+#board > div:nth-child(12n + 89) button,
+#board > div:nth-child(12n + 90) button,
+#board > div:nth-child(12n + 91) button,
+#board > div:nth-child(12n + 92) button,
+#board > div:nth-child(12n + 93) button,
+#board > div:nth-child(12n + 94) button,
+#board > div:nth-child(12n + 95) button,
+#board > div:nth-child(12n + 96) button {
+  background-color: #33FFFF; /* Cyan for the eighth set of 12 */
+}
+
+#board > div:nth-child(12n + 97) button,
+#board > div:nth-child(12n + 98) button,
+#board > div:nth-child(12n + 99) button,
+#board > div:nth-child(12n + 100) button,
+#board > div:nth-child(12n + 101) button,
+#board > div:nth-child(12n + 102) button,
+#board > div:nth-child(12n + 103) button,
+#board > div:nth-child(12n + 104) button,
+#board > div:nth-child(12n + 105) button,
+#board > div:nth-child(12n + 106) button,
+#board > div:nth-child(12n + 107) button,
+#board > div:nth-child(12n + 108) button {
+  background-color: #FF9933; /* Orange for the ninth set of 12 */
+}
+
+#board > div:nth-child(12n + 109) button,
+#board > div:nth-child(12n + 110) button,
+#board > div:nth-child(12n + 111) button,
+#board > div:nth-child(12n + 112) button,
+#board > div:nth-child(12n + 113) button,
+#board > div:nth-child(12n + 114) button,
+#board > div:nth-child(12n + 115) button,
+#board > div:nth-child(12n + 116) button,
+#board > div:nth-child(12n + 117) button,
+#board > div:nth-child(12n + 118) button,
+#board > div:nth-child(12n + 119) button,
+#board > div:nth-child(12n + 120) button {
+  background-color: #66FF33; /* Lime for the tenth set of 12 */
+}
+
+#board > div:nth-child(12n + 121) button,
+#board > div:nth-child(12n + 122) button,
+#board > div:nth-child(12n + 123) button,
+#board > div:nth-child(12n + 124) button,
+#board > div:nth-child(12n + 125) button,
+#board > div:nth-child(12n + 126) button,
+#board > div:nth-child(12n + 127) button,
+#board > div:nth-child(12n + 128) button,
+#board > div:nth-child(12n + 129) button,
+#board > div:nth-child(12n + 130) button,
+#board > div:nth-child(12n + 131) button,
+#board > div:nth-child(12n + 132) button {
+  background-color: #FF6666; /* Light Red for the eleventh set of 12 */
+}
+
+#board > div:nth-child(12n + 133) button,
+#board > div:nth-child(12n + 134) button,
+#board > div:nth-child(12n + 135) button,
+#board > div:nth-child(12n + 136) button,
+#board > div:nth-child(12n + 137) button,
+#board > div:nth-child(12n + 138) button,
+#board > div:nth-child(12n + 139) button,
+#board > div:nth-child(12n + 140) button,
+#board > div:nth-child(12n + 141) button,
+#board > div:nth-child(12n + 142) button,
+#board > div:nth-child(12n + 143) button,
+#board > div:nth-child(12n + 144) button {
+  background-color: #66B2FF; /* Light Blue for the twelfth set of 12 */
+}
+
+#board > div:nth-child(12n + 145) button,
+#board > div:nth-child(12n + 146) button,
+#board > div:nth-child(12n + 147) button,
+#board > div:nth-child(12n + 148) button,
+#board > div:nth-child(12n + 149) button,
+#board > div:nth-child(12n + 150) button,
+#board > div:nth-child(12n + 151) button,
+#board > div:nth-child(12n + 152) button,
+#board > div:nth-child(12n + 153) button,
+#board > div:nth-child(12n + 154) button,
+#board > div:nth-child(12n + 155) button,
+#board > div:nth-child(12n + 156) button {
+  background-color: #99FF99; /* Light Green for the thirteenth set of 12 */
+}
+
+#board > div:nth-child(12n + 157) button,
+#board > div:nth-child(12n + 158) button,
+#board > div:nth-child(12n + 159) button,
+#board > div:nth-child(12n + 160) button,
+#board > div:nth-child(12n + 161) button,
+#board > div:nth-child(12n + 162) button,
+#board > div:nth-child(12n + 163) button,
+#board > div:nth-child(12n + 164) button,
+#board > div:nth-child(12n + 165) button,
+#board > div:nth-child(12n + 166) button,
+#board > div:nth-child(12n + 167) button,
+#board > div:nth-child(12n + 168) button {
+  background-color: #FFCC99; /* Peach for the fourteenth set of 12 */
+}
+
+#board > div:nth-child(12n + 169) button,
+#board > div:nth-child(12n + 170) button,
+#board > div:nth-child(12n + 171) button,
+#board > div:nth-child(12n + 172) button,
+#board > div:nth-child(12n + 173) button,
+#board > div:nth-child(12n + 174) button,
+#board > div:nth-child(12n + 175) button,
+#board > div:nth-child(12n + 176) button,
+#board > div:nth-child(12n + 177) button,
+#board > div:nth-child(12n + 178) button,
+#board > div:nth-child(12n + 179) button,
+#board > div:nth-child(12n + 180) button {
+  background-color: #CCCCFF; /* Lavender for the fifteenth set of 12 */
+}
+
+#board > div:nth-child(12n + 181) button,
+#board > div:nth-child(12n + 182) button,
+#board > div:nth-child(12n + 183) button,
+#board > div:nth-child(12n + 184) button,
+#board > div:nth-child(12n + 185) button,
+#board > div:nth-child(12n + 186) button,
+#board > div:nth-child(12n + 187) button,
+#board > div:nth-child(12n + 188) button,
+#board > div:nth-child(12n + 189) button,
+#board > div:nth-child(12n + 190) button,
+#board > div:nth-child(12n + 191) button,
+#board > div:nth-child(12n + 192) button {
+  background-color: #FF99CC; /* Pink for the sixteenth set */
+}
+
+#board > div:nth-child(12n + 193) button,
+#board > div:nth-child(12n + 194) button,
+#board > div:nth-child(12n + 195) button,
+#board > div:nth-child(12n + 196) button,
+#board > div:nth-child(12n + 197) button,
+#board > div:nth-child(12n + 198) button,
+#board > div:nth-child(12n + 199) button,
+#board > div:nth-child(12n + 200) button,
+#board > div:nth-child(12n + 201) button,
+#board > div:nth-child(12n + 202) button,
+#board > div:nth-child(12n + 203) button,
+#board > div:nth-child(12n + 204) button {
+  background-color: #99CCFF; /* Light Sky Blue for the seventeenth set */
+}
+
+#board > div:nth-child(12n + 205) button,
+#board > div:nth-child(12n + 206) button,
+#board > div:nth-child(12n + 207) button,
+#board > div:nth-child(12n + 208) button,
+#board > div:nth-child(12n + 209) button,
+#board > div:nth-child(12n + 210) button,
+#board > div:nth-child(12n + 211) button,
+#board > div:nth-child(12n + 212) button,
+#board > div:nth-child(12n + 213) button,
+#board > div:nth-child(12n + 214) button,
+#board > div:nth-child(12n + 215) button,
+#board > div:nth-child(12n + 216) button {
+  background-color: #FFCC66; /* Golden for the eighteenth set */
+}
+
+#board > div:nth-child(12n + 217) button,
+#board > div:nth-child(12n + 218) button,
+#board > div:nth-child(12n + 219) button,
+#board > div:nth-child(12n + 220) button,
+#board > div:nth-child(12n + 221) button,
+#board > div:nth-child(12n + 222) button,
+#board > div:nth-child(12n + 223) button,
+#board > div:nth-child(12n + 224) button,
+#board > div:nth-child(12n + 225) button,
+#board > div:nth-child(12n + 226) button,
+#board > div:nth-child(12n + 227) button,
+#board > div:nth-child(12n + 228) button {
+  background-color: #CCFF99; /* Pastel Green for the 19th set */
+}
+
+#board > div:nth-child(12n + 229) button,
+#board > div:nth-child(12n + 230) button,
+#board > div:nth-child(12n + 231) button,
+#board > div:nth-child(12n + 232) button,
+#board > div:nth-child(12n + 233) button,
+#board > div:nth-child(12n + 234) button,
+#board > div:nth-child(12n + 235) button,
+#board > div:nth-child(12n + 236) button,
+#board > div:nth-child(12n + 237) button,
+#board > div:nth-child(12n + 238) button,
+#board > div:nth-child(12n + 239) button,
+#board > div:nth-child(12n + 240) button {
+  background-color: #99CCFF; /* Pastel Blue for the 20th set */
+}
+
+#board > div:nth-child(12n + 241) button,
+#board > div:nth-child(12n + 242) button,
+#board > div:nth-child(12n + 243) button,
+#board > div:nth-child(12n + 244) button,
+#board > div:nth-child(12n + 245) button,
+#board > div:nth-child(12n + 246) button,
+#board > div:nth-child(12n + 247) button,
+#board > div:nth-child(12n + 248) button,
+#board > div:nth-child(12n + 249) button,
+#board > div:nth-child(12n + 250) button,
+#board > div:nth-child(12n + 251) button,
+#board > div:nth-child(12n + 252) button {
+  background-color: #FFCCCC; /* Pastel Red for the 21st set */
+}
+
+#board > div:nth-child(12n + 253) button,
+#board > div:nth-child(12n + 254) button,
+#board > div:nth-child(12n + 255) button,
+#board > div:nth-child(12n + 256) button,
+#board > div:nth-child(12n + 257) button,
+#board > div:nth-child(12n + 258) button,
+#board > div:nth-child(12n + 259) button,
+#board > div:nth-child(12n + 260) button,
+#board > div:nth-child(12n + 261) button,
+#board > div:nth-child(12n + 262) button,
+#board > div:nth-child(12n + 263) button,
+#board > div:nth-child(12n + 264) button {
+  background-color: #CC99FF; /* Pastel Purple for the 22nd set */
+}
+
+#board > div:nth-child(12n + 265) button,
+#board > div:nth-child(12n + 266) button,
+#board > div:nth-child(12n + 267) button,
+#board > div:nth-child(12n + 268) button,
+#board > div:nth-child(12n + 269) button,
+#board > div:nth-child(12n + 270) button,
+#board > div:nth-child(12n + 271) button,
+#board > div:nth-child(12n + 272) button,
+#board > div:nth-child(12n + 273) button,
+#board > div:nth-child(12n + 274) button,
+#board > div:nth-child(12n + 275) button,
+#board > div:nth-child(12n + 276) button {
+  background-color: #99FFFF; /* Pastel Cyan for the 23rd set */
+}
+
+#board > div:nth-child(12n + 277) button,
+#board > div:nth-child(12n + 278) button,
+#board > div:nth-child(12n + 279) button,
+#board > div:nth-child(12n + 280) button,
+#board > div:nth-child(12n + 281) button,
+#board > div:nth-child(12n + 282) button,
+#board > div:nth-child(12n + 283) button,
+#board > div:nth-child(12n + 284) button,
+#board > div:nth-child(12n + 285) button,
+#board > div:nth-child(12n + 286) button,
+#board > div:nth-child(12n + 287) button,
+#board > div:nth-child(12n + 288) button {
+  background-color: #FFFF99; /* Pastel Yellow for the 24th set */
+}
+
+#board > div:nth-child(12n + 289) button,
+#board > div:nth-child(12n + 290) button,
+#board > div:nth-child(12n + 291) button,
+#board > div:nth-child(12n + 292) button,
+#board > div:nth-child(12n + 293) button,
+#board > div:nth-child(12n + 294) button,
+#board > div:nth-child(12n + 295) button,
+#board > div:nth-child(12n + 296) button,
+#board > div:nth-child(12n + 297) button,
+#board > div:nth-child(12n + 298) button,
+#board > div:nth-child(12n + 299) button,
+#board > div:nth-child(12n + 300) button {
+  background-color: #A0D6B4; /* Seafoam Green for the 25th set */
+}
+
+#board > div:nth-child(12n + 301) button,
+#board > div:nth-child(12n + 302) button,
+#board > div:nth-child(12n + 303) button,
+#board > div:nth-child(12n + 304) button,
+#board > div:nth-child(12n + 305) button,
+#board > div:nth-child(12n + 306) button,
+#board > div:nth-child(12n + 307) button,
+#board > div:nth-child(12n + 308) button,
+#board > div:nth-child(12n + 309) button,
+#board > div:nth-child(12n + 310) button,
+#board > div:nth-child(12n + 311) button,
+#board > div:nth-child(12n + 312) button {
+  background-color: #D6A0A0; /* Dusty Rose for the 26th set */
+}
+
+#board > div:nth-child(12n + 313) button,
+#board > div:nth-child(12n + 314) button,
+#board > div:nth-child(12n + 315) button,
+#board > div:nth-child(12n + 316) button,
+#board > div:nth-child(12n + 317) button,
+#board > div:nth-child(12n + 318) button,
+#board > div:nth-child(12n + 319) button,
+#board > div:nth-child(12n + 320) button,
+#board > div:nth-child(12n + 321) button,
+#board > div:nth-child(12n + 322) button,
+#board > div:nth-child(12n + 323) button,
+#board > div:nth-child(12n + 324) button {
+  background-color: #A0A0A0; /* Grey for the 27th set */
+}
+
+#board > div:nth-child(12n + 325) button,
+#board > div:nth-child(12n + 326) button,
+#board > div:nth-child(12n + 327) button,
+#board > div:nth-child(12n + 328) button,
+#board > div:nth-child(12n + 329) button,
+#board > div:nth-child(12n + 330) button,
+#board > div:nth-child(12n + 331) button,
+#board > div:nth-child(12n + 332) button,
+#board > div:nth-child(12n + 333) button,
+#board > div:nth-child(12n + 334) button,
+#board > div:nth-child(12n + 335) button,
+#board > div:nth-child(12n + 336) button {
+  background-color: #FFD700; /* Gold for the 28th set */
+}
+
+#board > div:nth-child(12n + 337) button,
+#board > div:nth-child(12n + 338) button,
+#board > div:nth-child(12n + 339) button,
+#board > div:nth-child(12n + 340) button,
+#board > div:nth-child(12n + 341) button,
+#board > div:nth-child(12n + 342) button,
+#board > div:nth-child(12n + 343) button,
+#board > div:nth-child(12n + 344) button,
+#board > div:nth-child(12n + 345) button,
+#board > div:nth-child(12n + 346) button,
+#board > div:nth-child(12n + 347) button,
+#board > div:nth-child(12n + 348) button {
+  background-color: #8A2BE2; /* Blue Violet for the 29th set */
+}
+
+#board > div:nth-child(12n + 349) button,
+#board > div:nth-child(12n + 350) button,
+#board > div:nth-child(12n + 351) button,
+#board > div:nth-child(12n + 352) button,
+#board > div:nth-child(12n + 353) button,
+#board > div:nth-child(12n + 354) button,
+#board > div:nth-child(12n + 355) button,
+#board > div:nth-child(12n + 356) button,
+#board > div:nth-child(12n + 357) button,
+#board > div:nth-child(12n + 358) button,
+#board > div:nth-child(12n + 359) button,
+#board > div:nth-child(12n + 360) button {
+  background-color: #FF4500; /* Orange Red for the 30th set */
+}

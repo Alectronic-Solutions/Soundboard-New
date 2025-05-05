@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="controls">
+    <input type="text" id="search" placeholder="Search sounds..." oninput="filterSounds()">
+    <button onclick="stopAll()">Stop All</button>
+    <select id="categories" onchange="filterCategory()">
+      <option value="all">All</option>
+      <option value="music">Music</option>
+      <option value="reactions">Reactions</option>
+      <option value="miscellaneous">Miscellaneous</option>
+      <option value="millions">Millions</option>
+      <option value="drums">Drums</option>
+      <option value="audience">Audience</option>
+    </select>
+  </div>
+  <div id="board">
+    <!-- Pop Culture -->
+    <div data-category="pop-culture">
+      <audio id="audio-bill-nye" src="sounds/Bill Nye the Science Guy.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bill-nye')">Bill Nye the Science Guy</button>
+    </div>
+    <div data-category="pop-culture">
+      <audio id="audio-star-wars-cantina" src="sounds/Star Wars Cantina.ogg" preload="auto"></audio>
+      <button onclick="play('audio-star-wars-cantina')">Star Wars Cantina</button>
+    </div>
+    <!-- Music -->
+    <div data-category="music">
+      <audio id="audio-baby-elephant" src="sounds/Baby Elephant Walk FRIDGE.ogg" preload="auto"></audio>
+      <button onclick="play('audio-baby-elephant')">Baby Elephant Walk FRIDGE</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-aye-yi" src="sounds/Aye Yi Yi Yi.ogg" preload="auto"></audio>
+      <button onclick="play('audio-aye-yi')">Aye Yi Yi Yi</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-bad-boys" src="sounds/Bad Boys Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bad-boys')">Bad Boys Theme</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-bad-bone" src="sounds/Bad to the Bone.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bad-bone')">Bad to the Bone</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-benny-hill" src="sounds/Benny Hill Chase Silly.ogg" preload="auto"></audio>
+      <button onclick="play('audio-benny-hill')">Benny Hill Chase Silly</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-bill-nye" src="sounds/Bill Nye the Science Guy.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bill-nye')">Bill Nye the Science Guy</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-come-on-down" src="sounds/Come-on-down.ogg" preload="auto"></audio>
+      <button onclick="play('audio-come-on-down')">Come-on-down</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-every-little-thing" src="sounds/Every Little Thing is Gonna Be Alright.ogg" preload="auto"></audio>
+      <button onclick="play('audio-every-little-thing')">Every Little Thing is Gonna Be Alright</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-family-feud" src="sounds/Family Feud Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-family-feud')">Family Feud Theme</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-fox-tv" src="sounds/Fox TV Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fox-tv')">Fox TV Theme</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-free-credit" src="sounds/Free credit report.ogg" preload="auto"></audio>
+      <button onclick="play('audio-free-credit')">Free credit report</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-friends-theme" src="sounds/Friends Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-friends-theme')">Friends Theme</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-full-house" src="sounds/Full House.ogg" preload="auto"></audio>
+      <button onclick="play('audio-full-house')">Full House</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-gameshow-ending" src="sounds/Gameshow Ending Wacky.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gameshow-ending')">Gameshow Ending Wacky</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-godfather-theme" src="sounds/Godfather Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-godfather-theme')">Godfather Theme</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-hello-welcome" src="sounds/Hello and welcome.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hello-welcome')">Hello and welcome</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-arms-angel" src="sounds/In the Arms of an Angel.ogg" preload="auto"></audio>
+      <button onclick="play('audio-arms-angel')">In the Arms of an Angel</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-india" src="sounds/India.ogg" preload="auto"></audio>
+      <button onclick="play('audio-india')">India</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-irish" src="sounds/Irish.ogg" preload="auto"></audio>
+      <button onclick="play('audio-irish')">Irish</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-jammin-marley" src="sounds/Jammin Bob Marley.ogg" preload="auto"></audio>
+      <button onclick="play('audio-jammin-marley')">Jammin Bob Marley</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-kells" src="sounds/Kells.ogg" preload="auto"></audio>
+      <button onclick="play('audio-kells')">Kells</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-let-her-go" src="sounds/Let her go.ogg" preload="auto"></audio>
+      <button onclick="play('audio-let-her-go')">Let her go</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-mash-theme" src="sounds/Mash Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-mash-theme')">Mash Theme</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-mingle-game" src="sounds/Mingle Game.ogg" preload="auto"></audio>
+      <button onclick="play('audio-mingle-game')">Mingle Game</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-mission-impossible" src="sounds/Mission Impossible.ogg" preload="auto"></audio>
+      <button onclick="play('audio-mission-impossible')">Mission Impossible</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-pinky-brain" src="sounds/Pinky and The Brain.ogg" preload="auto"></audio>
+      <button onclick="play('audio-pinky-brain')">Pinky and The Brain</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-pokemon" src="sounds/Pokemon.ogg" preload="auto"></audio>
+      <button onclick="play('audio-pokemon')">Pokemon</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-star-wars-cantina" src="sounds/Star Wars Cantina.ogg" preload="auto"></audio>
+      <button onclick="play('audio-star-wars-cantina')">Star Wars Cantina</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-step-by-step" src="sounds/Step By Step.ogg" preload="auto"></audio>
+      <button onclick="play('audio-step-by-step')">Step By Step</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-tequila" src="sounds/Tequila.ogg" preload="auto"></audio>
+      <button onclick="play('audio-tequila')">Tequila</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-adams-family" src="sounds/The Adams Family Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-adams-family')">The Adams Family Theme</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-jeffersons-theme" src="sounds/The Jeffersons Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-jeffersons-theme')">The Jeffersons Theme</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-stripper" src="sounds/The Stripper.ogg" preload="auto"></audio>
+      <button onclick="play('audio-stripper')">The Stripper</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-threes-company" src="sounds/Threes Company.ogg" preload="auto"></audio>
+      <button onclick="play('audio-threes-company')">Three's Company</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-two-half-men" src="sounds/Two and half men.ogg" preload="auto"></audio>
+      <button onclick="play('audio-two-half-men')">Two and half men</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-universal-studios" src="sounds/Universal Studios.ogg" preload="auto"></audio>
+      <button onclick="play('audio-universal-studios')">Universal Studios</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-vince-tammy" src="sounds/Vince Tammy.ogg" preload="auto"></audio>
+      <button onclick="play('audio-vince-tammy')">Vince Tammy</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-walk-like-egyptian" src="sounds/Walk like an egyptian.ogg" preload="auto"></audio>
+      <button onclick="play('audio-walk-like-egyptian')">Walk like an Egyptian</button>
+    </div>
+    <div data-category="music">
+      <audio id="audio-why-friends" src="sounds/Why Can't We Be Friends.ogg" preload="auto"></audio>
+      <button onclick="play('audio-why-friends')">Why Can't We Be Friends</button>
+    </div>
+    <!-- Reactions -->
+    <div data-category="reactions">
+      <audio id="audio-wow" src="sounds/Wow.ogg" preload="auto"></audio>
+      <button onclick="play('audio-wow')">Wow</button>
+    </div>
+    <div data-category="reactions">
+      <audio id="audio-gasp" src="sounds/Gasp.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gasp')">Gasp</button>
+    </div>
+    <!-- Miscellaneous -->
+    <div data-category="miscellaneous">
+      <audio id="audio-lamb-sauce" src="sounds/Where is the lamb sauce.ogg" preload="auto"></audio>
+      <button onclick="play('audio-lamb-sauce')">Where is the lamb sauce</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-universal-studios" src="sounds/Universal Studios.ogg" preload="auto"></audio>
+      <button onclick="play('audio-universal-studios')">Universal Studios</button>
+    </div>
+    <!-- Add missing categories -->
+    <div data-category="miscellaneous">
+      <audio id="audio-high-stupid" src="sounds/Are You High or Just Incredibly Stupid.ogg" preload="auto"></audio>
+      <button onclick="play('audio-high-stupid')">Are You High or Just Incredibly Stupid</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-sure-about-that" src="sounds/Are you sure about that.ogg" preload="auto"></audio>
+      <button onclick="play('audio-sure-about-that')">Are you sure about that</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-matrix" src="sounds/As long as the matrix exists the human race can never be free.ogg" preload="auto"></audio>
+      <button onclick="play('audio-matrix')">As long as the matrix exists</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-asian-gong" src="sounds/Asian Gong.ogg" preload="auto"></audio>
+      <button onclick="play('audio-asian-gong')">Asian Gong</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-aye-yi" src="sounds/Aye Yi Yi Yi.ogg" preload="auto"></audio>
+      <button onclick="play('audio-aye-yi')">Aye Yi Yi Yi</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-bad-boys" src="sounds/Bad Boys Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bad-boys')">Bad Boys Theme</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-bad-bone" src="sounds/Bad to the Bone.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bad-bone')">Bad to the Bone</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-banjo" src="sounds/Banjo Deliverance.ogg" preload="auto"></audio>
+      <button onclick="play('audio-banjo')">Banjo Deliverance</button>
+    </div>
+    <!-- Millions -->
+    <div data-category="millions">
+      <audio id="audio-bank-notes" src="sounds/Bank Notes for Millionaires.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bank-notes')">Bank Notes for Millionaires</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-weakest-link" src="sounds/Weakest Link.ogg" preload="auto"></audio>
+      <button onclick="play('audio-weakest-link')">Weakest Link</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-cash-me-outside" src="sounds/Cash me outside how bout dat.ogg" preload="auto"></audio>
+      <button onclick="play('audio-cash-me-outside')">Cash me outside how bout dat</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-she-shall-lure" src="sounds/She Shall Lure some Millionaire.ogg" preload="auto"></audio>
+      <button onclick="play('audio-she-shall-lure')">She Shall Lure some Millionaire</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-another-one" src="sounds/Another One.ogg" preload="auto"></audio>
+      <button onclick="play('audio-another-one')">Another One</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-mario-coin" src="sounds/Mario Coin.ogg" preload="auto"></audio>
+      <button onclick="play('audio-mario-coin')">Mario Coin</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-give-us-money" src="sounds/Give us some Money.ogg" preload="auto"></audio>
+      <button onclick="play('audio-give-us-money')">Give us some Money</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-making-donation" src="sounds/Im making a donation.ogg" preload="auto"></audio>
+      <button onclick="play('audio-making-donation')">I'm making a donation</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-kaching" src="sounds/Kaching.ogg" preload="auto"></audio>
+      <button onclick="play('audio-kaching')">Kaching</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-show-me-money" src="sounds/Show me the Money.ogg" preload="auto"></audio>
+      <button onclick="play('audio-show-me-money')">Show me the Money</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-taxes" src="sounds/Taxes.ogg" preload="auto"></audio>
+      <button onclick="play('audio-taxes')">Taxes</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-thanks-sarcastic" src="sounds/Thaaanks Sarcastic.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thanks-sarcastic')">Thaaanks Sarcastic</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-thank-you-donation" src="sounds/Thank You for the donation lady.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-donation')">Thank You for the donation lady</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-thank-you-patronage" src="sounds/Thank You for your patronage.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-patronage')">Thank You for your patronage</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-thank-you-rick" src="sounds/Thank You Rick.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-rick')">Thank You Rick</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-thank-you-south-park" src="sounds/Thank You South Park.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-south-park')">Thank You South Park</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-thank-you-sweet" src="sounds/Thank You Sweet.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-sweet')">Thank You Sweet</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-tip-pocket" src="sounds/Tip for you in my pocket.ogg" preload="auto"></audio>
+      <button onclick="play('audio-tip-pocket')">Tip for you in my pocket</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-tree-fiddy" src="sounds/Tree Fiddy.ogg" preload="auto"></audio>
+      <button onclick="play('audio-tree-fiddy')">Tree Fiddy</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-woohoo-homer" src="sounds/WoHoo Homer.ogg" preload="auto"></audio>
+      <button onclick="play('audio-woohoo-homer')">WoHoo Homer</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-why-do-that" src="sounds/Why in the fuck would I do that.ogg" preload="auto"></audio>
+      <button onclick="play('audio-why-do-that')">Why in the fuck would I do that</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-you-lose-mk" src="sounds/You Lose MK.ogg" preload="auto"></audio>
+      <button onclick="play('audio-you-lose-mk')">You Lose MK</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-add-up-figures" src="sounds/Add up those figures sir.ogg" preload="auto"></audio>
+      <button onclick="play('audio-add-up-figures')">Add up those figures sir</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-talk-about-money" src="sounds/All you can talk about is Money.ogg" preload="auto"></audio>
+      <button onclick="play('audio-talk-about-money')">All you can talk about is Money</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-congratulations-trump" src="sounds/Congratulations Trump.ogg" preload="auto"></audio>
+      <button onclick="play('audio-congratulations-trump')">Congratulations Trump</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-banned-mickey" src="sounds/Banned from micky mouse club for inappropriate.ogg" preload="auto"></audio>
+      <button onclick="play('audio-banned-mickey')">Banned from micky mouse club for inappropriate</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-beat-up" src="sounds/Beat up by a guy wearing a dress.ogg" preload="auto"></audio>
+      <button onclick="play('audio-beat-up')">Beat up by a guy wearing a dress</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-benny-hill" src="sounds/Benny Hill Chase Silly.ogg" preload="auto"></audio>
+      <button onclick="play('audio-benny-hill')">Benny Hill Chase Silly</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-big-cheer" src="sounds/Big cheer.ogg" preload="auto"></audio>
+      <button onclick="play('audio-big-cheer')">Big Cheer</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-bike-horn" src="sounds/Bike Horn.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bike-horn')">Bike Horn</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-bing-bong" src="sounds/Bing bing bong Thomas the train and Donald Trump.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bing-bong')">Bing bing bong Thomas the train and Donald Trump</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-boing-tree" src="sounds/Boing Tree.ogg" preload="auto"></audio>
+      <button onclick="play('audio-boing-tree')">Boing Tree</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-boing-two" src="sounds/Boing Two.ogg" preload="auto"></audio>
+      <button onclick="play('audio-boing-two')">Boing Two</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-boing" src="sounds/Boing.ogg" preload="auto"></audio>
+      <button onclick="play('audio-boing')">Boing</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-bomb-trump" src="sounds/Bomb the shit out of them Trump.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bomb-trump')">Bomb the shit out of them Trump</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-bottle-rocket" src="sounds/Bottle Rocket.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bottle-rocket')">Bottle Rocket</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-boxing-bell" src="sounds/Boxing Bell.ogg" preload="auto"></audio>
+      <button onclick="play('audio-boxing-bell')">Boxing Bell</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-breaking-news-2" src="sounds/Breaking News 2.ogg" preload="auto"></audio>
+      <button onclick="play('audio-breaking-news-2')">Breaking News 2</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-breaking-news-3" src="sounds/Breaking News 3.ogg" preload="auto"></audio>
+      <button onclick="play('audio-breaking-news-3')">Breaking News 3</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-breaking-news" src="sounds/Breaking News.ogg" preload="auto"></audio>
+      <button onclick="play('audio-breaking-news')">Breaking News</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-bright-side" src="sounds/Bright Side of Life.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bright-side')">Bright Side of Life</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-british" src="sounds/British.ogg" preload="auto"></audio>
+      <button onclick="play('audio-british')">British</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-broken-glass" src="sounds/Broken-glass.ogg" preload="auto"></audio>
+      <button onclick="play('audio-broken-glass')">Broken-glass</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-brutal-mk" src="sounds/Brutal MK.ogg" preload="auto"></audio>
+      <button onclick="play('audio-brutal-mk')">Brutal MK</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-buzzer" src="sounds/Buzzer.ogg" preload="auto"></audio>
+      <button onclick="play('audio-buzzer')">Buzzer</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-bye-felicia" src="sounds/Bye Felicia.ogg" preload="auto"></audio>
+      <button onclick="play('audio-bye-felicia')">Bye Felicia</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-camel" src="sounds/Camel.ogg" preload="auto"></audio>
+      <button onclick="play('audio-camel')">Camel</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-camera-click" src="sounds/Camera Click.ogg" preload="auto"></audio>
+      <button onclick="play('audio-camera-click')">Camera Click</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-can-do-sarcastic" src="sounds/Can Do Sarcastic.ogg" preload="auto"></audio>
+      <button onclick="play('audio-can-do-sarcastic')">Can Do Sarcastic</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-can-you-dig-it" src="sounds/Can You Dig lt.ogg" preload="auto"></audio>
+      <button onclick="play('audio-can-you-dig-it')">Can You Dig lt</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-car-crash" src="sounds/Car Crash.ogg" preload="auto"></audio>
+      <button onclick="play('audio-car-crash')">Car Crash</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-cartoon-slipping" src="sounds/Cartoon Slipping.ogg" preload="auto"></audio>
+      <button onclick="play('audio-cartoon-slipping')">Cartoon Slipping</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-cat-angry" src="sounds/Cat Angry.ogg" preload="auto"></audio>
+      <button onclick="play('audio-cat-angry')">Cat Angry</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-cheers" src="sounds/Cheers.ogg" preload="auto"></audio>
+      <button onclick="play('audio-cheers')">Cheers</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-chewbaca" src="sounds/Chewbaca.ogg" preload="auto"></audio>
+      <button onclick="play('audio-chewbaca')">Chewbaca</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-chicken-jockey" src="sounds/Chicken-jockey.ogg" preload="auto"></audio>
+      <button onclick="play('audio-chicken-jockey')">Chicken-j</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-chinese-intro" src="sounds/Chinese Intro.ogg" preload="auto"></audio>
+      <button onclick="play('audio-chinese-intro')">Chinese Intro</button>
+    </div>
+    <!-- Audience -->
+    <div data-category="audience">
+      <audio id="audio-clapping-cheering" src="sounds/Clapping Cheering.ogg" preload="auto"></audio>
+      <button onclick="play('audio-clapping-cheering')">Clapping Cheering</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-clapping-large" src="sounds/Clapping Large Audience.ogg" preload="auto"></audio>
+      <button onclick="play('audio-clapping-large')">Clapping Large Audience</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-clapping-medium-audience" src="sounds/Clapping Medium Audience.ogg" preload="auto"></audio>
+      <button onclick="play('audio-clapping-medium-audience')">Clapping Medium Audience</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-clapping-medium" src="sounds/Clapping Medium.ogg" preload="auto"></audio>
+      <button onclick="play('audio-clapping-medium')">Clapping Medium</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-clapping-normal" src="sounds/Clapping Normal.ogg" preload="auto"></audio>
+      <button onclick="play('audio-clapping-normal')">Clapping Normal</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-clapping-short" src="sounds/Clapping Short.ogg" preload="auto"></audio>
+      <button onclick="play('audio-clapping-short')">Clapping Short</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-clapping-sus" src="sounds/Clapping Sus.ogg" preload="auto"></audio>
+      <button onclick="play('audio-clapping-sus')">Clapping Sus</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-crowd-aww-cute" src="sounds/Crowd Aww Cute.ogg" preload="auto"></audio>
+      <button onclick="play('audio-crowd-aww-cute')">Crowd Aww Cute</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-crowd-aww-loss" src="sounds/Crowd Aww Loss.ogg" preload="auto"></audio>
+      <button onclick="play('audio-crowd-aww-loss')">Crowd Aww Loss</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-crowd-aww-nooo" src="sounds/Crowd Aww Nooo.ogg" preload="auto"></audio>
+      <button onclick="play('audio-crowd-aww-nooo')">Crowd Aww Nooo</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-crowd-booo" src="sounds/Crowd Booo.ogg" preload="auto"></audio>
+      <button onclick="play('audio-crowd-booo')">Crowd Booo</button>
+    </div>
+    <div data-category="audience">
+      <audio id="audio-big-cheer" src="sounds/Big cheer.ogg" preload="auto"></audio>
+      <button onclick="play('audio-big-cheer')">Big Cheer</button>
+    </div>
+    <!-- Miscellaneous -->
+    <div data-category="miscellaneous">
+      <audio id="audio-eagle" src="sounds/Eagle.ogg" preload="auto"></audio>
+      <button onclick="play('audio-eagle')">Eagle</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-eat-shit-derek" src="sounds/Eat Shit Derek.ogg" preload="auto"></audio>
+      <button onclick="play('audio-eat-shit-derek')">Eat Shit Derek</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-elephant" src="sounds/Elephant.ogg" preload="auto"></audio>
+      <button onclick="play('audio-elephant')">Elephant</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-english-speak-it" src="sounds/English do you speak it.ogg" preload="auto"></audio>
+      <button onclick="play('audio-english-speak-it')">English do you speak it</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-enoch" src="sounds/Enoch.ogg" preload="auto"></audio>
+      <button onclick="play('audio-enoch')">Enoch</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-especially-weed" src="sounds/Especially on weed man.ogg" preload="auto"></audio>
+      <button onclick="play('audio-especially-weed')">Especially on weed man</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-every-little-thing" src="sounds/Every Little Thing is Gonna Be Alright.ogg" preload="auto"></audio>
+      <button onclick="play('audio-every-little-thing')">Every Little Thing is Gonna Be Alright</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-evil-laugh" src="sounds/Evil Laugh.ogg" preload="auto"></audio>
+      <button onclick="play('audio-evil-laugh')">Evil Laugh</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fairy" src="sounds/Fairy.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fairy')">Fairy</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-family-feud" src="sounds/Family Feud Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-family-feud')">Family Feud Theme</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fart-large" src="sounds/Fart Large.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fart-large')">Fart Large</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fart-two" src="sounds/Fart Two.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fart-two')">Fart Two</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fart" src="sounds/Fart.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fart')">Fart</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fatality" src="sounds/Fatality.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fatality')">Fatality</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-female-scream" src="sounds/Female scream.ogg" preload="auto"></audio>
+      <button onclick="play('audio-female-scream')">Female scream</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-flawless-victory" src="sounds/Flawless Victory MK.ogg" preload="auto"></audio>
+      <button onclick="play('audio-flawless-victory')">Flawless Victory MK</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fox-tv" src="sounds/Fox TV Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fox-tv')">Fox TV Theme</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-free-credit" src="sounds/Free credit report.ogg" preload="auto"></audio>
+      <button onclick="play('audio-free-credit')">Free credit report</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-friends-theme" src="sounds/Friends Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-friends-theme')">Friends Theme</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-full-house" src="sounds/Full House.ogg" preload="auto"></audio>
+      <button onclick="play('audio-full-house')">Full House</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-future-army" src="sounds/Future army soldier.ogg" preload="auto"></audio>
+      <button onclick="play('audio-future-army')">Future army soldier</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fuuuck-long" src="sounds/Fuuuck Long.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fuuuck-long')">Fuuuck Long</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gameshow-ending" src="sounds/Gameshow Ending Wacky.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gameshow-ending')">Gameshow Ending Wacky</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gasp" src="sounds/Gasp.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gasp')">Gasp</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gay" src="sounds/Gay.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gay')">Gay</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-get-er-done" src="sounds/Get er Done.ogg" preload="auto"></audio>
+      <button onclick="play('audio-get-er-done')">Get er Done</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-get-help" src="sounds/Get help.ogg" preload="auto"></audio>
+      <button onclick="play('audio-get-help')">Get help</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-get-swifty" src="sounds/Get Swifty.ogg" preload="auto"></audio>
+      <button onclick="play('audio-get-swifty')">Get Swifty</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-ghost-moan" src="sounds/Ghost moan.ogg" preload="auto"></audio>
+      <button onclick="play('audio-ghost-moan')">Ghost moan</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-giligans-island" src="sounds/Giligans Island Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-giligans-island')">Giligans Island Theme</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-godfather-theme" src="sounds/Godfather Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-godfather-theme')">Godfather Theme</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-smoke-weed" src="sounds/Gonna Smoke Some Weed.ogg" preload="auto"></audio>
+      <button onclick="play('audio-smoke-weed')">Gonna Smoke Some Weed</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-goofy-car-horn" src="sounds/Goofy car horn.ogg" preload="auto"></audio>
+      <button onclick="play('audio-goofy-car-horn')">Goofy car horn</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gun-cock" src="sounds/Gun Cock.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gun-cock')">Gun Cock</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gun-lazers-reggae" src="sounds/Gun Lazers Reggae.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gun-lazers-reggae')">Gun Lazers Reggae</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gun-lazers-tie" src="sounds/Gun Lazers Tie Fighter.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gun-lazers-tie')">Gun Lazers Tie Fighter</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gun-rapid-fire" src="sounds/Gun Rapid Fire.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gun-rapid-fire')">Gun Rapid Fire</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gun-richochet" src="sounds/Gun Richochet Miss.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gun-richochet')">Gun Richochet Miss</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-gun-shot-cock" src="sounds/Gun Shot with Cock.ogg" preload="auto"></audio>
+      <button onclick="play('audio-gun-shot-cock')">Gun Shot with Cock</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-ha-ha-shut-up" src="sounds/Ha Ha Ha Shut Up.ogg" preload="auto"></audio>
+      <button onclick="play('audio-ha-ha-shut-up')">Ha Ha Ha Shut Up</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-ha-ha-nelson" src="sounds/Ha Ha Nelson.ogg" preload="auto"></audio>
+      <button onclick="play('audio-ha-ha-nelson')">Ha Ha Nelson</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hackings-bad" src="sounds/Hackings Bad Trump.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hackings-bad')">Hackings Bad Trump</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hallelujah" src="sounds/Hallelujah.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hallelujah')">Hallelujah</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hawk-tuah-arnold" src="sounds/Hawk Tuah Arnold.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hawk-tuah-arnold')">Hawk Tuah Arnold</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hawk-tuah-short" src="sounds/Hawk Tuah Short.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hawk-tuah-short')">Hawk Tuah Short</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hawk-tuah" src="sounds/Hawk Tuah.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hawk-tuah')">Hawk Tuah</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-he-he-jackson" src="sounds/He He Jackson.ogg" preload="auto"></audio>
+      <button onclick="play('audio-he-he-jackson')">He He Jackson</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-he-was-retard" src="sounds/He was a Retard.ogg" preload="auto"></audio>
+      <button onclick="play('audio-he-was-retard')">He was a Retard</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-helicopter" src="sounds/Helicopter.ogg" preload="auto"></audio>
+      <button onclick="play('audio-helicopter')">Helicopter</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hell-naw" src="sounds/Hell naw.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hell-naw')">Hell naw</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hello-welcome" src="sounds/Hello and welcome.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hello-welcome')">Hello and welcome</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hello-millionaires" src="sounds/Hello Future Millionaires.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hello-millionaires')">Hello Future Millionaires</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-home-alone" src="sounds/Home Alone and Interested in Sex.ogg" preload="auto"></audio>
+      <button onclick="play('audio-home-alone')">Home Alone and Interested in Sex</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hoo-wee" src="sounds/Hoo wee what a cliffhanger.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hoo-wee')">Hoo wee what a cliffhanger</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-hopefully-life" src="sounds/Hopefully you didn't fuck around and waste your life.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hopefully-life')">Hopefully you didn't waste your life</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-horse-running" src="sounds/Horse Running.ogg" preload="auto"></audio>
+      <button onclick="play('audio-horse-running')">Horse Running</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-horse-whinny" src="sounds/Horse Whinny.ogg" preload="auto"></audio>
+      <button onclick="play('audio-horse-whinny')">Horse Whinny</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-how-dare-you" src="sounds/How Dare You.ogg" preload="auto"></audio>
+      <button onclick="play('audio-how-dare-you')">How Dare You</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-how-good-bane" src="sounds/How Good of You to Join Us Bane.ogg" preload="auto"></audio>
+      <button onclick="play('audio-how-good-bane')">How Good of You to Join Us Bane</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-how-it-feels" src="sounds/How it feels to chew 5 gum.ogg" preload="auto"></audio>
+      <button onclick="play('audio-how-it-feels')">How it feels to chew 5 gum</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-making-donation" src="sounds/Im making a donation.ogg" preload="auto"></audio>
+      <button onclick="play('audio-making-donation')">I'm making a donation</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-sorry-saint" src="sounds/Im Sorry I was such a saint before.ogg" preload="auto"></audio>
+      <button onclick="play('audio-sorry-saint')">I'm Sorry I was such a saint before</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-sorry" src="sounds/Im Sorry.ogg" preload="auto"></audio>
+      <button onclick="play('audio-sorry')">I'm Sorry</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-arms-angel" src="sounds/In the Arms of an Angel.ogg" preload="auto"></audio>
+      <button onclick="play('audio-arms-angel')">In the Arms of an Angel</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-navy" src="sounds/In the Navy.ogg" preload="auto"></audio>
+      <button onclick="play('audio-navy')">In the Navy</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-inception" src="sounds/Inception.ogg" preload="auto"></audio>
+      <button onclick="play('audio-inception')">Inception</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-india" src="sounds/India.ogg" preload="auto"></audio>
+      <button onclick="play('audio-india')">India</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-irish" src="sounds/Irish.ogg" preload="auto"></audio>
+      <button onclick="play('audio-irish')">Irish</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-maam" src="sounds/It is Maam.ogg" preload="auto"></audio>
+      <button onclick="play('audio-maam')">It is Maam</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-getting-weird" src="sounds/Its getting wierd.ogg" preload="auto"></audio>
+      <button onclick="play('audio-getting-weird')">It's getting weird</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-raining-men" src="sounds/Its raining men hallelujah.ogg" preload="auto"></audio>
+      <button onclick="play('audio-raining-men')">It's raining men hallelujah</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-always-here" src="sounds/I've always been here for you guys and I always will be.ogg" preload="auto"></audio>
+      <button onclick="play('audio-always-here')">I've always been here for you guys and I always will be</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-martial-arts" src="sounds/I've been doing martial arts my whole life I dont wanna fight.ogg" preload="auto"></audio>
+      <button onclick="play('audio-martial-arts')">I've been doing martial arts my whole life I don't wanna fight</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fallen-cant-get-up" src="sounds/Ive fallen and I can't get up.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fallen-cant-get-up')">I've fallen and I can't get up</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-fallen-cant-get-up-alt" src="sounds/I've Fallen and I can't get up.ogg" preload="auto"></audio>
+      <button onclick="play('audio-fallen-cant-get-up-alt')">I've Fallen and I can't get up</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-jade-pussycat" src="sounds/Jade Pussycat.ogg" preload="auto"></audio>
+      <button onclick="play('audio-jade-pussycat')">Jade Pussycat</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-jammin-marley" src="sounds/Jammin Bob Marley.ogg" preload="auto"></audio>
+      <button onclick="play('audio-jammin-marley')">Jammin Bob Marley</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-jeopardy-theme" src="sounds/Jeopardy Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-jeopardy-theme')">Jeopardy Theme</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-just-do-it" src="sounds/Just do it.ogg" preload="auto"></audio>
+      <button onclick="play('audio-just-do-it')">Just do it</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-kells" src="sounds/Kells.ogg" preload="auto"></audio>
+      <button onclick="play('audio-kells')">Kells</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-we-got-em" src="sounds/Ladies and Gentlemen we got em.ogg" preload="auto"></audio>
+      <button onclick="play('audio-we-got-em')">Ladies and Gentlemen we got em</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-laughing-clap" src="sounds/Laughing Clap.ogg" preload="auto"></audio>
+      <button onclick="play('audio-laughing-clap')">Laughing Clap</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-laughing-fo" src="sounds/Laughing Fo.ogg" preload="auto"></audio>
+      <button onclick="play('audio-laughing-fo')">Laughing Fo</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-laughing-one" src="sounds/Laughing One.ogg" preload="auto"></audio>
+      <button onclick="play('audio-laughing-one')">Laughing One</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-laughing-sitcom" src="sounds/Laughing Sitcom.ogg" preload="auto"></audio>
+      <button onclick="play('audio-laughing-sitcom')">Laughing Sitcom</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-laughing-tree" src="sounds/Laughing Tree.ogg" preload="auto"></audio>
+      <button onclick="play('audio-laughing-tree')">Laughing Tree</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-laughing-two" src="sounds/Laughing Two.ogg" preload="auto"></audio>
+      <button onclick="play('audio-laughing-two')">Laughing Two</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-laughing" src="sounds/Laughing.ogg" preload="auto"></audio>
+      <button onclick="play('audio-laughing')">Laughing</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-laverne-shirley" src="sounds/Laverne and Shirley Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-laverne-shirley')">Laverne and Shirley Theme</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-law-order" src="sounds/Law and Order.ogg" preload="auto"></audio>
+      <button onclick="play('audio-law-order')">Law and Order</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-let-her-go" src="sounds/Let her go.ogg" preload="auto"></audio>
+      <button onclick="play('audio-let-her-go')">Let her go</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-limit-talking" src="sounds/Limit on Talking.ogg" preload="auto"></audio>
+      <button onclick="play('audio-limit-talking')">Limit on Talking</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-looney-toons" src="sounds/Looney Toons Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-looney-toons')">Looney Toons Theme</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-millionaire-5min" src="sounds/Millionaire $$$5min.ogg" preload="auto"></audio>
+      <button onclick="play('audio-millionaire-5min')">Millionaire $$$5min</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-youre-a-millionaire" src="sounds/You're a Millionaire.ogg" preload="auto"></audio>
+      <button onclick="play('audio-youre-a-millionaire')">You're a Millionaire</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-lose-millionaire-short" src="sounds/LOSE Millionaire Short.ogg" preload="auto"></audio>
+      <button onclick="play('audio-lose-millionaire-short')">LOSE Millionaire Short</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-lose-millionaire" src="sounds/LOSE Millionaire.ogg" preload="auto"></audio>
+      <button onclick="play('audio-lose-millionaire')">LOSE Millionaire</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-i-am-millionaire-trump" src="sounds/I am a Millionaire - Trump.ogg" preload="auto"></audio>
+      <button onclick="play('audio-i-am-millionaire-trump')">I am a Millionaire - Trump</button>
+    </div>
+    <div data-category="millions">
+      <audio id="audio-hello-future-millionaires" src="sounds/Hello Future Millionaires.ogg" preload="auto"></audio>
+      <button onclick="play('audio-hello-future-millionaires')">Hello Future Millionaires</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-mingle-game" src="sounds/Mingle Game.ogg" preload="auto"></audio>
+      <button onclick="play('audio-mingle-game')">Mingle Game</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-mission-failed" src="sounds/Mission failed.ogg" preload="auto"></audio>
+      <button onclick="play('audio-mission-failed')">Mission failed</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-mission-impossible" src="sounds/Mission Impossible.ogg" preload="auto"></audio>
+      <button onclick="play('audio-mission-impossible')">Mission Impossible</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-money-more-money" src="sounds/Money Money I want more Money.ogg" preload="auto"></audio>
+      <button onclick="play('audio-money-more-money')">Money Money I want more Money</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-moneyyy-song" src="sounds/Moneyyy Song.ogg" preload="auto"></audio>
+      <button onclick="play('audio-moneyyy-song')">Moneyyy Song</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-monkey" src="sounds/Monkey.ogg" preload="auto"></audio>
+      <button onclick="play('audio-monkey')">Monkey</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-moo" src="sounds/Moo.ogg" preload="auto"></audio>
+      <button onclick="play('audio-moo')">Moo</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-my-name-jeff" src="sounds/My name Jeff.ogg" preload="auto"></audio>
+      <button onclick="play('audio-my-name-jeff')">My name Jeff</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-obama-racist" src="sounds/Obama if we are racist.ogg" preload="auto"></audio>
+      <button onclick="play('audio-obama-racist')">Obama if we are racist</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-ohhh-la-la" src="sounds/Ohhh La La.ogg" preload="auto"></audio>
+      <button onclick="play('audio-ohhh-la-la')">Ohhh La La</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-ok-lil-jon" src="sounds/0k Lil Jon.ogg" preload="auto"></audio>
+      <button onclick="play('audio-ok-lil-jon')">0k Lil Jon</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-right-near-beach" src="sounds/Right Near the Beach Boi.ogg" preload="auto"></audio>
+      <button onclick="play('audio-right-near-beach')">Right Near the Beach Boi</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-road-runner" src="sounds/Road Runner.ogg" preload="auto"></audio>
+      <button onclick="play('audio-road-runner')">Road Runner</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-roxanne" src="sounds/Roxanne.ogg" preload="auto"></audio>
+      <button onclick="play('audio-roxanne')">Roxanne</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-roxannel" src="sounds/Roxannel.ogg" preload="auto"></audio>
+      <button onclick="play('audio-roxannel')">Roxannel</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-sad-trombone" src="sounds/Sad Trombone.ogg" preload="auto"></audio>
+      <button onclick="play('audio-sad-trombone')">Sad Trombone</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-sad-violin" src="sounds/Sad Violin.ogg" preload="auto"></audio>
+      <button onclick="play('audio-sad-violin')">Sad Violin</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-scoobydoo" src="sounds/ScoobyDoo.ogg" preload="auto"></audio>
+      <button onclick="play('audio-scoobydoo')">ScoobyDoo</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-seinfeld-intro" src="sounds/Seinfeld Intro.ogg" preload="auto"></audio>
+      <button onclick="play('audio-seinfeld-intro')">Seinfeld Intro</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-sex-change" src="sounds/Sex Change I Need It Now.ogg" preload="auto"></audio>
+      <button onclick="play('audio-sex-change')">Sex Change I Need It Now</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-sheep" src="sounds/Sheep.ogg" preload="auto"></audio>
+      <button onclick="play('audio-sheep')">Sheep</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-silly-spanish-flea" src="sounds/Silly Spanish Flea FRIDGE.ogg" preload="auto"></audio>
+      <button onclick="play('audio-silly-spanish-flea')">Silly Spanish Flea FRIDGE</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-next-to-millionaire" src="sounds/ng Next to a Millionaire.ogg" preload="auto"></audio>
+      <button onclick="play('audio-next-to-millionaire')">ng Next to a Millionaire</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-smoke-weed-everyday" src="sounds/Smoke Weed Everyday.ogg" preload="auto"></audio>
+      <button onclick="play('audio-smoke-weed-everyday')">Smoke Weed Everyday</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-spend-money" src="sounds/Spend your Money like Money aint Song.ogg" preload="auto"></audio>
+      <button onclick="play('audio-spend-money')">Spend your Money like Money ain't Song</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-spongebob-fail" src="sounds/Spongebob Fail.ogg" preload="auto"></audio>
+      <button onclick="play('audio-spongebob-fail')">Spongebob Fail</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-spring" src="sounds/Spring.ogg" preload="auto"></audio>
+      <button onclick="play('audio-spring')">Spring</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-star-wars-cantina" src="sounds/Star Wars Cantina.ogg" preload="auto"></audio>
+      <button onclick="play('audio-star-wars-cantina')">Star Wars Cantina</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-step-by
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-suicide" src="sounds/Suicide.ogg" preload="auto"></audio>
+      <button onclick="play('audio-suicide')">Suicide</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-surprise" src="sounds/Surpnse-supnse.ogg" preload="auto"></audio>
+      <button onclick="play('audio-surprise')">Surpnse-supnse</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-suspense-harp" src="sounds/Suspense Harp.ogg" preload="auto"></audio>
+      <button onclick="play('audio-suspense-harp')">Suspense Harp</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-suspense-medium" src="sounds/Suspense Medium.ogg" preload="auto"></audio>
+      <button onclick="play('audio-suspense-medium')">Suspense Medium</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-suspense-short" src="sounds/Suspense Short.ogg" preload="auto"></audio>
+      <button onclick="play('audio-suspense-short')">Suspense Short</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-suspense-tuba" src="sounds/Suspense Tuba.ogg" preload="auto"></audio>
+      <button onclick="play('audio-suspense-tuba')">Suspense Tuba</button>
+    </div>
+    <!-- Drums -->
+    <div data-category="drums">
+      <audio id="audio-drums-1min" src="sounds/Drums 1min.ogg" preload="auto"></audio>
+      <button onclick="play('audio-drums-1min')">Drums 1min</button>
+    </div>
+    <div data-category="drums">
+      <audio id="audio-drums-bongos" src="sounds/Drums Bongos.ogg" preload="auto"></audio>
+      <button onclick="play('audio-drums-bongos')">Drums Bongos</button>
+    </div>
+    <div data-category="drums">
+      <audio id="audio-drums-medium" src="sounds/Drums Medium.ogg" preload="auto"></audio>
+      <button onclick="play('audio-drums-medium')">Drums Medium</button>
+    </div>
+    <div data-category="drums">
+      <audio id="audio-drums-rim-shot" src="sounds/Drums Rim Shot.ogg" preload="auto"></audio>
+      <button onclick="play('audio-drums-rim-shot')">Drums Rim Shot</button>
+    </div>
+    <div data-category="drums">
+      <audio id="audio-drums-ting" src="sounds/Drums Ting.ogg" preload="auto"></audio>
+      <button onclick="play('audio-drums-ting')">Drums Ting</button>
+    </div>
+    <div data-category="drums">
+      <audio id="audio-dun-dun" src="sounds/Dun Dun Dunnnn.ogg" preload="auto"></audio>
+      <button onclick="play('audio-dun-dun')">Dun Dun Dunnnn</button>
+    </div>
+    <div>
+      <audio id="audio-taco-bell-bong" src="sounds/Taco bell bong.ogg" preload="auto"></audio>
+      <button onclick="play('audio-taco-bell-bong')">Taco bell bong</button>
+    </div>
+    <div>
+      <audio id="audio-tada" src="sounds/Tada.ogg" preload="auto"></audio>
+      <button onclick="play('audio-tada')">Tada</button>
+    </div>
+    <div>
+      <audio id="audio-taxes" src="sounds/Taxes.ogg" preload="auto"></audio>
+      <button onclick="play('audio-taxes')">Taxes</button>
+    </div>
+    <div>
+      <audio id="audio-tequila" src="sounds/Tequila.ogg" preload="auto"></audio>
+      <button onclick="play('audio-tequila')">Tequila</button>
+    </div>
+    <div>
+      <audio id="audio-thanks-sarcastic" src="sounds/Thaaanks Sarcastic.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thanks-sarcastic')">Thaaanks Sarcastic</button>
+    </div>
+    <div>
+      <audio id="audio-thank-you-donation" src="sounds/Thank You for the donation lady.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-donation')">Thank You for the donation lady</button>
+    </div>
+    <div>
+      <audio id="audio-thank-you-patronage" src="sounds/Thank You for your patronage.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-patronage')">Thank You for your patronage</button>
+    </div>
+    <div>
+      <audio id="audio-thank-you-rick" src="sounds/Thank You Rick.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-rick')">Thank You Rick</button>
+    </div>
+    <div>
+      <audio id="audio-thank-you-south-park" src="sounds/Thank You South Park.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-south-park')">Thank You South Park</button>
+    </div>
+    <div>
+      <audio id="audio-thank-you-sweet" src="sounds/Thank You Sweet.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thank-you-sweet')">Thank You Sweet</button>
+    </div>
+    <div>
+      <audio id="audio-that-means-gay" src="sounds/That means your gay.ogg" preload="auto"></audio>
+      <button onclick="play('audio-that-means-gay')">That means your gay</button>
+    </div>
+    <div>
+      <audio id="audio-thats-a-lot-nuts" src="sounds/Thats a lot of Nuts.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thats-a-lot-nuts')">That's a lot of Nuts</button>
+    </div>
+    <div>
+      <audio id="audio-thats-what-she-said" src="sounds/Thats What She Said.ogg" preload="auto"></audio>
+      <button onclick="play('audio-thats-what-she-said')">That's What She Said</button>
+    </div>
+    <div>
+      <audio id="audio-adams-family" src="sounds/The Adams Family Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-adams-family')">The Adams Family Theme</button>
+    </div>
+    <div>
+      <audio id="audio-jeffersons-theme" src="sounds/The Jeffersons Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-jeffersons-theme')">The Jeffersons Theme</button>
+    </div>
+    <div>
+      <audio id="audio-more-you-know" src="sounds/The more you know.ogg" preload="auto"></audio>
+      <button onclick="play('audio-more-you-know')">The more you know</button>
+    </div>
+    <div>
+      <audio id="audio-important-money" src="sounds/The Most Important Thing is Money.ogg" preload="auto"></audio>
+      <button onclick="play('audio-important-money')">The Most Important Thing is Money</button>
+    </div>
+    <div>
+      <audio id="audio-stripper" src="sounds/The Stripper.ogg" preload="auto"></audio>
+      <button onclick="play('audio-stripper')">The Stripper</button>
+    </div>
+    <div>
+      <audio id="audio-threes-company" src="sounds/Threes Company.ogg" preload="auto"></audio>
+      <button onclick="play('audio-threes-company')">Three's Company</button>
+    </div>
+    <div>
+      <audio id="audio-tim-allen-grunt" src="sounds/Tim Allen Grunt Home Improvement.ogg" preload="auto"></audio>
+      <button onclick="play('audio-tim-allen-grunt')">Tim Allen Grunt Home Improvement</button>
+    </div>
+    <div>
+      <audio id="audio-tip-pocket" src="sounds/Tip for you in my pocket.ogg" preload="auto"></audio>
+      <button onclick="play('audio-tip-pocket')">Tip for you in my pocket</button>
+    </div>
+    <div>
+      <audio id="audio-toilet" src="sounds/Toilet.ogg" preload="auto"></audio>
+      <button onclick="play('audio-toilet')">Toilet</button>
+    </div>
+    <div>
+      <audio id="audio-tree-fiddy" src="sounds/Tree Fiddy.ogg" preload="auto"></audio>
+      <button onclick="play('audio-tree-fiddy')">Tree Fiddy</button>
+    </div>
+    <div>
+      <audio id="audio-trombone-high" src="sounds/Trombone High Pitch.ogg" preload="auto"></audio>
+      <button onclick="play('audio-trombone-high')">Trombone High Pitch</button>
+    </div>
+    <div>
+      <audio id="audio-two-half-men" src="sounds/Two and a Half Men Theme.ogg" preload="auto"></audio>
+      <button onclick="play('audio-two-half-men')">Two and a Half Men Theme</button>
+    </div>
+    <div>
+      <audio id="audio-walk-like-egyptian" src="sounds/Walk like an egyptian.ogg" preload="auto"></audio>
+      <button onclick="play('audio-walk-like-egyptian')">Walk like an Egyptian</button>
+    </div>
+    <div>
+      <audio id="audio-wasted" src="sounds/Wasted.ogg" preload="auto"></audio>
+      <button onclick="play('audio-wasted')">Wasted</button>
+    </div>
+    <div>
+      <audio id="audio-weakest-link" src="sounds/Weakest Link.ogg" preload="auto"></audio>
+      <button onclick="play('audio-weakest-link')">Weakest Link</button>
+    </div>
+    <div>
+      <audio id="audio-well-be-right-back" src="sounds/Well Be Right Back.ogg" preload="auto"></audio>
+      <button onclick="play('audio-well-be-right-back')">We'll Be RightBack</button>
+    </div>
+    <div>
+      <audio id="audio-were-here-to-help" src="sounds/Were here to help.ogg" preload="auto"></audio>
+      <button onclick="play('audio-were-here-to-help')">We're here to help</button>
+    </div>
+    <div>
+      <audio id="audio-western-crowd" src="sounds/Western crowd.ogg" preload="auto"></audio>
+      <button onclick="play('audio-western-crowd')">Western Crowd</button>
+    </div>
+    <div>
+      <audio id="audio-what-are-you-homo" src="sounds/What are you a homo.ogg" preload="auto"></audio>
+      <button onclick="play('audio-what-are-you-homo')">What are you a homo</button>
+    </div>
+    <div>
+      <audio id="audio-what-on-dope" src="sounds/What are you people on dope.ogg" preload="auto"></audio>
+      <button onclick="play('audio-what-on-dope')">What are you people on dope</button>
+    </div>
+    <div>
+      <audio id="audio-what-da-dog-do" src="sounds/What da dog do.ogg" preload="auto"></audio>
+      <button onclick="play('audio-what-da-dog-do')">What da dog do</button>
+    </div>
+    <div>
+      <audio id="audio-funny-how" src="sounds/What do you mean funny funny how.ogg" preload="auto"></audio>
+      <button onclick="play('audio-funny-how')">What do you mean funny funny how</button>
+    </div>
+    <div>
+      <audio id="audio-what-joke" src="sounds/What is That Joke.ogg" preload="auto"></audio>
+      <button onclick="play('audio-what-joke')">What is That Joke</button>
+    </div>
+    <div>
+      <audio id="audio-what-lil-jon" src="sounds/What Lil Jon.ogg" preload="auto"></audio>
+      <button onclick="play('audio-what-lil-jon')">What Lil Jon</button>
+    </div>
+    <div>
+      <audio id="audio-what-hell-going-on" src="sounds/What the hell is going on here exactly.ogg" preload="auto"></audio>
+      <button onclick="play('audio-what-hell-going-on')">What the hell is going on here exactly</button>
+    </div>
+    <div>
+      <audio id="audio-what-hell-wrong" src="sounds/What the hell is wrong with you people.ogg" preload="auto"></audio>
+      <button onclick="play('audio-what-hell-wrong')">What the hell is wrong with you people</button>
+    </div>
+    <div>
+      <audio id="audio-one-hand-clapping" src="sounds/Whats the sound of one hand clapping.ogg" preload="auto"></audio>
+      <button onclick="play('audio-one-hand-clapping')">What's the sound of one hand clapping</button>
+    </div>
+    <div>
+      <audio id="audio-lamb-sauce" src="sounds/Where is the lamb sauce.ogg" preload="auto"></audio>
+      <button onclick="play('audio-lamb-sauce')">Where is the lamb sauce</button>
+    </div>
+    <div>
+      <audio id="audio-rest-of-meth" src="sounds/Wheres the rest of my meth.ogg" preload="auto"></audio>
+      <button onclick="play('audio-rest-of-meth')">Where's the rest of my meth</button>
+    </div>
+    <div>
+      <audio id="audio-whip" src="sounds/Whip.ogg" preload="auto"></audio>
+      <button onclick="play('audio-whip')">Whip</button>
+    </div>
+    <div>
+      <audio id="audio-white-dude-harris" src="sounds/White Dude for Harris.ogg" preload="auto"></audio>
+      <button onclick="play('audio-white-dude-harris')">White Dude for Harris</button>
+    </div>
+    <div>
+      <audio id="audio-who-is-your-daddy" src="sounds/Who is your daddy and what does he do.ogg" preload="auto"></audio>
+      <button onclick="play('audio-who-is-your-daddy')">Who is your daddy and what does he do</button>
+    </div>
+    <div>
+      <audio id="audio-who-the-hell-cares" src="sounds/Who the Hell Cares.ogg" preload="auto"></audio>
+      <button onclick="play('audio-who-the-hell-cares')">Who the Hell Cares</button>
+    </div>
+    <div>
+      <audio id="audio-whos-that-pokemon" src="sounds/Who's thatPokemon.ogg" preload="auto"></audio>
+      <button onclick="play('audio-whos-that-pokemon')">Who's that Pokemon</button>
+    </div>
+    <div>
+      <audio id="audio-why-are-you-gay" src="sounds/Why are you gay.ogg" preload="auto"></audio>
+      <button onclick="play('audio-why-are-you-gay')">Why are you gay</button>
+    </div>
+    <div>
+      <audio id="audio-why-friends" src="sounds/Why Can't We Be Friends.ogg" preload="auto"></audio>
+      <button onclick="play('audio-why-friends')">Why Can't We Be Friends</button>
+    </div>
+    <div>
+      <audio id="audio-why-do-that" src="sounds/Why in the fuck would I do that.ogg" preload="auto"></audio>
+      <button onclick="play('audio-why-do-that')">Why in the fuck would I do that</button>
+    </div>
+    <div>
+      <audio id="audio-pay-tax-trump" src="sounds/Will I pay a lot of tax Trump.ogg" preload="auto"></audio>
+      <button onclick="play('audio-pay-tax-trump')">Will I pay a lot of tax Trump</button>
+    </div>
+    <div>
+      <audio id="audio-woohoo-homer" src="sounds/WoHoo Homer.ogg" preload="auto"></audio>
+      <button onclick="play('audio-woohoo-homer')">WoHoo Homer</button>
+    </div>
+    <div>
+      <audio id="audio-wolf" src="sounds/Wolf.ogg" preload="auto"></audio>
+      <button onclick="play('audio-wolf')">Wolf</button>
+    </div>
+    <div>
+      <audio id="audio-wonka-flute" src="sounds/Wonka flute.ogg" preload="auto"></audio>
+      <button onclick="play('audio-wonka-flute')">Wonka flute</button>
+    </div>
+    <div>
+      <audio id="audio-woodpecker" src="sounds/Woodpecker.ogg" preload="auto"></audio>
+      <button onclick="play('audio-woodpecker')">Woodpecker</button>
+    </div>
+    <div>
+      <audio id="audio-wow-dude" src="sounds/Wow Dude.ogg" preload="auto"></audio>
+      <button onclick="play('audio-wow-dude')">Wow Dude</button>
+    </div>
+    <div>
+      <audio id="audio-wow-kid" src="sounds/Wow kid.ogg" preload="auto"></audio>
+      <button onclick="play('audio-wow-kid')">Wow kid</button>
+    </div>
+    <div>
+      <audio id="audio-wow" src="sounds/Wow.ogg" preload="auto"></audio>
+      <button onclick="play('audio-wow')">Wow</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-add-up-figures" src="sounds/Add up those figures sir.ogg" preload="auto"></audio>
+      <button onclick="play('audio-add-up-figures')">Add up those figures sir</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-talk-about-money" src="sounds/All you can talk about is Money.ogg" preload="auto"></audio>
+      <button onclick="play('audio-talk-about-money')">All you can talk about is Money</button>
+    </div>
+    <div data-category="miscellaneous">
+      <audio id="audio-congratulations-trump" src="sounds/Congratulations Trump.ogg" preload="auto"></audio>
+      <button onclick="play('audio-congratulations-trump')">Congratulations Trump</button>
+    </div>
+  </div>
+
+  <script>
+    function play(id) {
+      const orig = document.getElementById(id);
+      const clone = orig.cloneNode();
+      clone.play();
+      clone.dataset.isClone = true;
+      document.body.appendChild(clone);
+      clone.addEventListener('ended', () => clone.remove());
+    }
+
+    function stopAll() {
+      const audios = document.querySelectorAll('audio, audio[data-is-clone]');
+      audios.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+        if (audio.dataset.isClone) {
+          audio.remove();
+        }
+      });
+    }
+
+    function filterSounds() {
+      const query = document.getElementById('search').value.toLowerCase();
+      const items = document.querySelectorAll('#board > div');
+      items.forEach(item => {
+        const text = item.querySelector('button').textContent.toLowerCase();
+        item.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+
+    function filterCategory() {
+      const category = document.getElementById('categories').value;
+      const items = document.querySelectorAll('#board > div');
+      items.forEach(item => {
+        item.style.display = category === 'all' || item.dataset.category === category ? '' : 'none';
+      });
+    }
+
+    // Initialize to hide all items except the default category
+    document.addEventListener('DOMContentLoaded', () => {
+      filterCategory();
+    });
+  </script>
+</body>
+</html>
